@@ -123,3 +123,76 @@ const name6 = "default";
 const age6 = 40;
 
 const myprofile5 = {name6,age6}
+
+console.log(myprofile5);
+
+/**
+ * スプレッド構文
+ */
+
+//配列の展開
+const arr1 = [1,2];
+console.log(arr1);
+console.log(...arr1);
+
+const sumFunc = (num1,num2) => console.log(num1 + num2);
+
+sumFunc(arr1[0],arr1[1]);
+sumFunc(...arr1);
+
+// まとめる
+const arr2 = [1,2,3,4,5];
+const [num1,num2,...arr3] = arr2;
+console.log(num1,num2,arr3);
+
+// 配列のコピー、結合
+const arr4 = [10,20];
+const arr5 = [30,40];
+
+const arr6 = [...arr4];
+console.log(arr6);
+
+const arr7 = [...arr4,...arr5];
+console.log(arr7);
+
+/**
+ * mapやfilterを使った配列の処理
+ */
+const nameArr = ["name1","name2","name3"];
+for(let index=0; index < nameArr.length; index++) {
+    console.log(nameArr[index]);
+}
+
+// map
+nameArr.map((name,index) => console.log(`${index}:${name}`));
+
+// fileter
+const numArr = [1,2,3,4,5];
+const newNumArr = numArr.filter((num) => num % 2 === 1);
+console.log(newNumArr);
+
+const newNameArr = nameArr.map((name,index) => {
+    if ( name === "name1") {
+        return name;
+    } else {
+        return `${name} + さん`;
+    }
+});
+console.log(newNameArr);
+
+/**
+ *  三項演算子
+ */
+const test  = 1 > 2 ? "val1" : "val2";
+console.log(test);
+
+const number = "1500";
+console.log(number.toLocaleString());
+
+const formattedNumber = typeof number === "number" ? number.toLocaleString() : "数値を入力してください";
+console.log(formattedNumber);
+
+const checkSum = (num1,num2) => {
+    return num1 + num2 > 100 ? "true" : "false";
+}
+console.log(checkSum(100,200));
